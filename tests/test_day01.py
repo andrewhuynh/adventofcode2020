@@ -10,10 +10,10 @@ class TestFun(unittest.TestCase):
 
 class TestReportRepair(unittest.TestCase):
     def test_report_repair_two(self):
-        self.assertEqual(514579, report_repair_two("tests/day01_sample"))
+        self.assertEqual(514579, report_repair_two("samples/day01_sample"))
 
     def test_report_repair_three(self):
-        self.assertEqual(241861950, report_repair_three("tests/day01_sample"))
+        self.assertEqual(241861950, report_repair_three("samples/day01_sample"))
 
 
 if __name__ == '__main__':

@@ -31,13 +31,13 @@ class TestGetSeatId(TestCase):
 
 class TestGetHighestSeatId(TestCase):
     def test_get_highest_seat_id(self):
-        self.assertEqual(820, get_highest_seat_id("day05_sample"))
-        self.assertEqual(970, get_highest_seat_id("day05_input"))
+        self.assertEqual(820, get_highest_seat_id("samples/day05_sample"))
+        self.assertEqual(970, get_highest_seat_id("samples/day05_input"))
 
 
 class TestGetMissingSeatId(TestCase):
     def test_get_missing_seat_id(self):
-        self.assertEqual(587, get_missing_seat_id("day05_input"))
+        self.assertEqual(587, get_missing_seat_id("samples/day05_input"))
 
 
 if __name__ == '__main__':
