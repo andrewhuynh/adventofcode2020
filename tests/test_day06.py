@@ -12,4 +12,4 @@ class TestGroupsSum(TestCase):
 class TestCountUnanimousYes(TestCase):
     def test_count_unanimous_yes(self):
         self.assertEqual(6, count_unanimous_yes("samples/day06_sample"))
-        self.assertEqual(6, count_unanimous_yes("samples/day06_input"))
+        self.assertEqual(3520, count_unanimous_yes("samples/day06_input"))
