@@ -1,20 +1,38 @@
 import unittest
+from unittest import TestCase
 
-from src.day05 import highest_seat, highester_seat
+from src.day05 import get_row, get_column, get_seat_id, get_highest_seat_id, highester_seat
 
 
-class TestHighestSeat(unittest.TestCase):
-    def test_highest_seat_sample(self):
-        self.assertEqual(820, highest_seat("day05_sample"))
+class TestGetRow(TestCase):
+    def test_get_row(self):
+        self.assertEqual(44, get_row("FBFBBFFRLR"))
+        self.assertEqual(127, get_row("BBBBBBBRLR"))
+        self.assertEqual(70, get_row("BFFFBBFRRR"))
+        self.assertEqual(14, get_row("FFFBBBFRRR"))
+        self.assertEqual(102, get_row("BBFFBBFRLL"))
 
-    def test_highest_seat_input(self):
-        self.assertEqual(0, highest_seat("day05_input"))
 
-    def test_stricter_papers_please_sample(self):
-       self.assertEqual(0, highester_seat("day05_sample"))
+class TestGetColumn(TestCase):
+    def test_get_column(self):
+        self.assertEqual(5, get_column("FBFBBFFRLR"))
+        self.assertEqual(7, get_column("BFFFBBFRRR"))
+        self.assertEqual(7, get_column("FFFBBBFRRR"))
+        self.assertEqual(4, get_column("BBFFBBFRLL"))
 
-    def test_stricter_papers_please_input(self):
-        self.assertEqual(0, highester_seat("day05_input"))
+
+class TestGetSeatId(TestCase):
+    def test_get_seat_id(self):
+        self.assertEqual(357, get_seat_id("FBFBBFFRLR"))
+        self.assertEqual(567, get_seat_id("BFFFBBFRRR"))
+        self.assertEqual(119, get_seat_id("FFFBBBFRRR"))
+        self.assertEqual(820, get_seat_id("BBFFBBFRLL"))
+
+
+class TestGetHighestSeatId(TestCase):
+    def test_get_highest_seat_id(self):
+        self.assertEqual(820, get_highest_seat_id("day05_sample"))
+        self.assertEqual(970, get_highest_seat_id("day05_input"))
 
 
 if __name__ == '__main__':
