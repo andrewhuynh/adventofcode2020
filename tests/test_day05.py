@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 
-from src.day05 import get_row, get_column, get_seat_id, get_highest_seat_id, highester_seat
+from src.day05 import get_row, get_column, get_seat_id, get_highest_seat_id, get_missing_seat_id
 
 
 class TestGetRow(TestCase):
@@ -33,6 +33,11 @@ class TestGetHighestSeatId(TestCase):
     def test_get_highest_seat_id(self):
         self.assertEqual(820, get_highest_seat_id("day05_sample"))
         self.assertEqual(970, get_highest_seat_id("day05_input"))
+
+
+class TestGetMissingSeatId(TestCase):
+    def test_get_missing_seat_id(self):
+        self.assertEqual(587, get_missing_seat_id("day05_input"))
 
 
 if __name__ == '__main__':

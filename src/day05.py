@@ -49,8 +49,19 @@ def get_highest_seat_id(x):
     return highest_seat_id
 
 
-def highester_seat(x):
+def get_missing_seat_id(x):
     f = open(x)
-    boarding_passes_raw = f.readlines()
+    seat_ids = [get_seat_id(boarding_pass) for boarding_pass in f.readlines()]
+    seat_ids.sort()
+    start = seat_ids[0]
+    missing_seat_id = 0
+    i = 0
+    not_done = True
+    while i < len(seat_ids) and not_done:
+        if (i + start) not in seat_ids:
+            not_done = False
+            missing_seat_id = (i + start)
+        i += 1
     f.close()
-    return 0
+
+    return missing_seat_id
