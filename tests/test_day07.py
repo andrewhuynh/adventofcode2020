@@ -18,11 +18,3 @@ class TestGetNumberOfBagsRequired(TestCase):
         self.assertEqual(4, get_number_of_bags_required("samples/day07_sample_5"))
         self.assertEqual(32, get_number_of_bags_required("samples/day07_sample_6"))
         self.assertEqual(18925, get_number_of_bags_required("samples/day07_input"))
-
-
-# class TestColorSum(TestCase):
-#     def test_color_sum(self):
-#         test_rules = {'dark red': ['0'], 'shiny gold': ['2 dark red']}
-#         self.assertEqual(2, color_sum("shiny gold", test_rules))
-#         test_rules_2 = {'dark orange': ['0'], 'dark red': ['2 dark orange'], 'shiny gold': ['2 dark red']}
-#         self.assertEqual(6, color_sum("shiny gold", test_rules_2))

@@ -39,7 +39,6 @@ def get_color_count(x):
 
 
 def color_sum(color, rules_lookup):
-    # shiny gold, {'faded blue': ['0'], 'dark olive': ['3 faded blue', '4 dotted black'], 'vibrant plum': ['5 faded blue', '6 dotted black'], 'dotted black': ['0'], 'shiny gold': ['1 dark olive', '2 vibrant plum']}
     bag_content = rules_lookup[color][0]
     # print(bag_content)
     if bag_content == '0':
@@ -51,8 +50,6 @@ def color_sum(color, rules_lookup):
             content_count = int(re.findall("^[0-9]+", content)[0])
             content_color = re.findall("[a-z]+\\s[a-z]+$", content)[0]
             color_total += content_count + content_count * color_sum(content_color, rules_lookup)
-            # print("content_color: %s" % content_color)
-            # return content_count + content_count * color_sum(content_color, rules_lookup)
         return color_total
 
 
@@ -68,20 +65,3 @@ def get_number_of_bags_required(x):
         # print(rule_lookup)
         bags_required = color_sum(bag_color, rule_lookup)
     return bags_required
-
-# rule[1] = rule[1].strip().strip(".").replace("no other bags", "0").replace(" bags", "").replace(" bag", "")\
-#     .split(", ")
-# print(rule_lookup[bag_color])
-# for item in rule_lookup[bag_color]:
-#     count = int(re.findall("^[0-9]+", item)[0])
-#     print(count)
-#     bags_required += count
-#     color = (re.findall("[a-z]+\\s[a-z]+$", item)[0])
-#     print(color)
-#     print(rule_lookup[color])
-#     for item2 in rule_lookup[color]:
-#         count2 = int(re.findall("^[0-9]+", item2)[0])
-#         color2 = (re.findall("[a-z]+\\s[a-z]+$", item2)[0])
-#         print(count2)
-#         print(color2)
-#     print("=====================")
